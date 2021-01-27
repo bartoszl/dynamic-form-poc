@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import data from './response';
+import Form from './Form';
 
 function App() {
+  // We will be fetching schema here, we need to provide it before we render form!!!!
+  useEffect(() => {
+    console.log('fetchSchema');
+  }, []);
+
+  // if(!schema) return null;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Form schema={data.data} />
   );
 }
 
